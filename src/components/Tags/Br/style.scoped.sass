@@ -1,0 +1,49 @@
+@use "../../../styles/colors"
+@use "../../../styles/font"
+
+@mixin tag-br($position: 'top-bottom', $close: false)
+    font-family: font.$font-family-tag
+    color: colors.$deep-purple-A100-60p
+    font-size: 20px
+    position: absolute
+    font-weight: 300
+    line-height: 0px
+
+    @if ($position == 'top-bottom')
+        @if $close == false
+            content: '<br>'
+            top: 36px
+        @else
+            content: '<br/>'
+            bottom: -66px
+    @else
+        top: 50%
+
+        @if $close == false
+            transform: translate(-52px,-50%)
+            content: '<br>'
+        @else
+            transform: translate(16px,-50%)
+            content: '<br/>'
+
+.tag-br
+    position: relative
+    color: font.$font-color-br-text
+    font-weight: 700
+    font-size: inherit
+
+    &.tag-br--top-bottom
+        &:before
+            @include tag-br("top-bottom", false)
+
+        &:after
+            @include tag-br("top-bottom", true)
+    &.tag-br--left-right
+        margin-left: 60px
+        margin-right: 60px
+
+        &:before
+            @include tag-br("left-right", false)
+
+        &:after
+            @include tag-br("left-right", true)

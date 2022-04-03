@@ -1,0 +1,27 @@
+@use "../../../styles/mixins"
+@use "../../../styles/colors"
+@use "../../../styles/font"
+
+@mixin tag-h3($close: false)
+    @include mixins.tag
+    font-size: 20px
+    font-weight: 300
+
+    @if $close == false
+        content: '<h3>'
+        top: -8px
+    @else
+        content: '<h3/>'
+        bottom: -8px
+
+.tag-h3
+    @include mixins.tag-text
+
+    font-weight: 400
+    font-size: 30px
+
+    &:before
+        @include tag-h3(false)
+
+    &:after
+        @include tag-h3(true)

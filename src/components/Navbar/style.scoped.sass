@@ -1,0 +1,76 @@
+@use '../../styles/colors'
+@use '../../styles/mixins'
+
+$icon-size: 16px
+$icon-color: colors.$light-blue-A700
+
+$text-color: colors.$light-blue-A700
+$text-size: 0.72rem
+
+.navbar
+    padding: 5px 0px
+    display: flex
+    justify-content: space-around
+    background-color: colors.$light-blue-A700-40p
+    height: 100vh
+    width: 138px
+
+    .navbar-content
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        width: 100%
+
+        .navbar-item
+            position: relative
+            box-sizing: border-box
+            display: flex
+            padding: 18px 10px
+            align-items: center
+            justify-content: flex-start
+            border: 1px solid transparent
+            transition: all 400ms
+            transition-delay: 100ms
+
+            &:after
+                display: block
+                position: absolute
+                top: 0
+                left: 0
+                bottom: 0
+                right: 0
+                width: 100%
+                height: 100%
+                content: '.'
+                background-color: colors.$light-blue-A700-40p
+                visibility: none
+                opacity: 0
+                z-index: -1
+                transition: all 200ms
+                transition-delay: 50ms
+
+            .navbar-item-icon
+                @include mixins.center-flexbox
+                width: 35px
+                height: 35px
+                margin-right: 5px
+
+                .navbar-item-icon__icon
+                    color: $icon-color
+                    font-size: $icon-size
+
+            .navbar-item__label
+                color: $text-color
+                font-weight: bold
+                font-size: $text-size
+
+            &:hover,&.navbar-item--current
+                cursor: pointer
+                border-color: colors.$light-blue-A700
+                &:after
+                    opacity: 1
+                    visibility: visible
+
+@media only screen and (max-width: 1480px)
+    .navbar
+        display: none

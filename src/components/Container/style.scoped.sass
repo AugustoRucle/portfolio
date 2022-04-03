@@ -1,0 +1,36 @@
+@use "../../styles/font"
+@use "../../styles/colors"
+
+@mixin tag-body($close: false)
+    font-family: font.$font-family-tag !important
+    color: colors.$gray-700-20p
+    font-size: 120px
+    position: absolute
+    font-weight: bold
+    left: 20px
+    line-height: 106px
+
+    @if $close == false
+        content: '<body>'
+        top: 0px
+    @else
+        content: '<body/>'
+        bottom: 25px
+
+.customer-container
+    position: relative
+    padding: 150px 20px
+    padding-left: 40px
+    height: 100vh
+    flex: 1
+
+    &:before
+        @include tag-body(false)
+
+    &:after
+        @include tag-body(true)
+
+@media only screen and (max-width: 1480px)
+
+    .customer-container
+        height: auto

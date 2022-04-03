@@ -1,0 +1,22 @@
+@use "../../styles/colors"
+
+.typewriter
+    .typewriter--content
+        overflow: hidden
+        border-right: .15em solid colors.$white
+        white-space: nowrap
+        letter-spacing: .15em
+        animation: typing 4.0s steps(60, end), blink-caret .5s step-end infinite
+
+    .typewriter--stop
+        border-right: 0
+
+@keyframes typing
+    from
+        width: 0
+
+@keyframes blink-caret
+    from, to 
+        border-color: transparent
+    50%
+        border-color: colors.$white

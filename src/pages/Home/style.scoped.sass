@@ -1,0 +1,122 @@
+@use "../../styles/colors"
+
+.home-page
+    height: 100%
+    width: 100%
+    display: flex
+    flex-direction: row
+    justy-content: space-between
+    align-items: center
+
+    .left-content
+        display: flex
+        flex-direction: column
+        flex: 1
+        order: 1
+
+        .about-me
+            position: relative
+            height: 70px
+
+            .about-me--animation
+                position: absolute
+                left: 0px
+                bottom: -5px
+                opacity: 0
+                animation: bottomFadeOut 3s linear 8s normal forwards
+
+    .right-content
+        display: flex
+        flex-direction: column
+        margin-right: 50px
+        order: 2
+
+        .avatar
+            position: relative
+            height: 480px
+            width: 433px
+
+            .avatar--animation
+                position: absolute
+                top: 0px
+                bottom: 0px
+                right: -3rem
+                opacity: 0
+                animation: rightFadeInOut 2.6s linear 8.5s normal forwards
+
+            .avatar--img
+                height: 510px
+                width: 433px
+
+        .socials
+            position: relative
+            padding-top: 10px
+            height: 130px
+
+            .socials-content
+                display: flex
+                align-items: center
+                justify-content: space-around
+
+            .socials--animation
+                position: absolute
+                left: 0px
+                right: 0px
+                bottom: -5px
+                opacity: 0
+                animation: bottomFadeOut 3s linear 8s normal forwards
+
+@keyframes bottomFadeOut
+    0%
+        bottom: -5px
+        opacity: 0
+
+    75%
+        bottom: 20px
+        opacity: 1
+
+    100%
+        bottom: 20px
+        opacity: 1
+
+@keyframes rightFadeInOut
+    0%
+        position: absolute
+        right: -3rem
+        opacity: 0
+
+    75%
+        position: absolute
+        right: 1.3rem
+        opacity: 1
+
+    100%
+        opacity: 1
+        right: 1.3rem
+
+@media only screen and (max-width: 1480px)
+    .home-page
+        display: flex
+        flex-direction: column
+
+        .left-content
+            align-items: start
+            margin-right: 0px
+            order: 2
+            width: 680px
+
+        .right-content
+            margin-right: 0px
+            order: 1
+            margin-top: 40px
+            margin-bottom: 80px
+
+            .socials
+                margin-top: 20px
+
+@media only screen and (max-width: 800px)
+    .home-page
+
+        .left-content
+            align-items: start
+            width: auto

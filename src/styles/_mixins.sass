@@ -1,0 +1,22 @@
+@use "./colors"
+@use "./font"
+
+@mixin center-flexbox
+    display: flex
+    align-items: center
+    justify-content: center
+
+@mixin tag
+    font-family: font.$font-family-tag !important
+    color: colors.$gray-700-60p
+    position: absolute
+    left: 0px
+    line-height: 0px
+    &*
+        font-family: font.$font-family-tag !important
+
+@mixin tag-text
+    position: relative
+    color: font.$font-color-text
+    padding-left: 15px
+    line-height: 4.5rem

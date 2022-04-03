@@ -1,0 +1,28 @@
+@use "../../../styles/mixins"
+@use "../../../styles/colors"
+@use "../../../styles/font"
+
+@mixin tag-p($close: false)
+    @include mixins.tag
+    font-size: 20px
+    font-weight: 300
+
+    @if $close == false
+        content: '<p>'
+        top: -20px
+    @else
+        content: '<p/>'
+        bottom: -20px
+
+.tag-p
+    @include mixins.tag-text
+
+    font-weight: 400
+    font-size: 20px
+    line-height: 2.5rem
+
+    &:before
+        @include tag-p(false)
+
+    &:after
+        @include tag-p(true)

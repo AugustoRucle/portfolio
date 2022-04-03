@@ -1,0 +1,17 @@
+@use "./font"
+@use "./animations"
+@use "./colors"
+
+body
+    margin: 0
+    font-family: font.$font-family
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    background-color: colors.$gray-900 !important
+
+.social-tooltip .ant-tooltip-inner
+    background-color: #424242
+
+.social-tooltip .ant-tooltip-arrow-content
+    --antd-arrow-background-color: #424242
+    background-color: #424242

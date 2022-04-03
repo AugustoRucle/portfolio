@@ -1,0 +1,30 @@
+
+            .avatar-content
+                position: relative
+                display: flex
+                justify-content: center
+                margin-bottom: 70px
+                height: 100%
+                width: 100%
+
+                .avatar--img
+                    border-radius: 5px
+                    height: 100%
+                    width: 100%
+
+                &:after
+                    content: '.'
+                    border-radius: 5px
+                    position: absolute
+                    top: 20px
+                    bottom: -20px
+                    right: -28px
+                    background-color: red
+                    width: 90%
+                    z-index: -1
+
+                    background: colors.$white-01p
+
+                    border: 2px solid colors.$light-blue-A700
+                    box-sizing: border-box
+                    box-shadow: inset 0px 0px 40px colors.$light-blue-A700
