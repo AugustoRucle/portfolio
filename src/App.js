@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import Navbar from './components/Navbar';
+import Loading from './components/Loading/Loading';
 import Container from './components/Container';
+import Navbar from './components/Navbar';
 
-import HomePage from './pages/Home';
+function App(props) {
+  const [showLoading, setShowLoading] = useState(true);
 
-function App() {
-  return <div className="d-flex flex-row">
-    <Navbar />
-    <Container>
-      <HomePage />
-    </Container>
-  </div>
+  /**
+   * On finish loading
+   * 
+   * @return
+   */
+  const onFinishLoading = () => {
+    setShowLoading(false);
+  }
+
+  return showLoading
+    ? <Loading
+      duration={5000}
+      onFinish={onFinishLoading}
+    />
+    : <div className="d-flex flex-row">
+      <Navbar />
+      <Container>
+        {props.children}
+      </Container>
+    </div>
 }
 
 export default App;
