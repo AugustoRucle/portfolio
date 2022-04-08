@@ -1,0 +1,16 @@
+@use '../../styles/colors'
+@use '../../styles/mixins'
+
+.loading-page
+    position: relative
+
+    @include mixins.center-flexbox
+
+    width: 100vw
+    height: 100vh
+
+    background-color: colors.$gray-900
+
+
+    .loading-page__text
+        color: colors.$white
