@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
+import {
+    defaultProps as defaultPropsContainer,
+    propTypes as propTypesContainer,
+} from '../ItemContainer/propTypes';
 
 const propTypes = {
+    ...propTypesContainer,
     icon: PropTypes.string,
     label: PropTypes.string,
-    current: PropTypes.bool,
 };
 
 const defaultProps = {
+    ...defaultPropsContainer,
     icon: '',
     label: '',
-    current: false,
 };
 
 export {

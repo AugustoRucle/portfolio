@@ -3,18 +3,25 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Icons from '@fortawesome/free-solid-svg-icons';
 
+import Container from "../ItemContainer";
 import { Typography } from 'antd';
 
 import '../../style.scoped.sass';
 
 function NavbarItem(props) {
     const {
+        onClick,
+        current,
         label,
         icon,
-        current,
+        to,
     } = props;
 
-    return <div className={`navbar-item ${current && 'navbar-item--current'}`}>
+    return <Container
+        current={current}
+        to={to}
+        onClick={onClick}
+    >
         <div className="navbar-item-icon">
             <FontAwesomeIcon
                 className="navbar-item-icon__icon"
@@ -25,7 +32,7 @@ function NavbarItem(props) {
         <Typography className="navbar-item__label">
             {label}
         </Typography>
-    </div>
+    </Container>
 }
 
 export default NavbarItem;
