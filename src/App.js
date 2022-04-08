@@ -21,7 +21,7 @@ function App(props) {
       duration={5000}
       onFinish={onFinishLoading}
     />
-    : <div className="d-flex flex-row">
+    : <div className="d-flex flex-row overflow-hidden position-relative" style={{ height: "100vh" }}>
       <Navbar />
       <Container>
         {props.children}

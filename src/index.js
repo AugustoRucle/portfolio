@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.sass';
 import 'antd/dist/antd.css';
-import Router from './Router';
 import reportWebVitals from './reportWebVitals';
+
+import {
+  BrowserRouter,
+} from "react-router-dom";
+import Router from './Router';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router />
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

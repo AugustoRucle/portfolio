@@ -1,7 +1,11 @@
 import React from 'react';
 
+import PageTransition from '../../components/PageTransition';
+
 function ContactPage(props) {
-    return <p className="text-white">Hola desde contact</p>
+    return <PageTransition>
+        <p className="text-white">Hola desde contact</p>
+    </PageTransition>
 }
 
 export default ContactPage;

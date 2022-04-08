@@ -10,15 +10,24 @@ import HomePage from './pages/Home';
 import App from './App';
 
 import {
-    BrowserRouter,
     Routes,
     Route,
+    useLocation,
 } from "react-router-dom";
 
+import {
+    AnimatePresence,
+} from 'framer-motion';
+
 function Router() {
-    return <BrowserRouter>
+    const location = useLocation();
+
+    return <AnimatePresence>
         <App loadingPage={true}>
-            <Routes>
+            <Routes
+                location={location}
+                key={location.pathname}
+            >
                 <Route index element={<HomePage />} />
                 <Route path="/experience" element={<ExperiencePage />} />
                 <Route path="/festivals" element={<FestivalsPage />} />
@@ -28,7 +37,7 @@ function Router() {
                 <Route path="/skills" element={<SkillsPage />} />
             </Routes>
         </App>
-    </BrowserRouter>
+    </AnimatePresence>
 }
 
 export default Router;
