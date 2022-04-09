@@ -4,29 +4,29 @@ import './style.scoped.sass';
 
 function BrTag(props) {
     const {
-        position,
+        parent,
         className,
     } = props;
 
-    const getClassName = (position) => {
+    const getClassName = (parent) => {
         let classNameTemp = `tag-br ${className}`;
 
-        switch (position) {
-            case 'top-bottom':
-                classNameTemp = `${classNameTemp} tag-br--top-bottom`;
+        switch (parent) {
+            case 'h1':
+                classNameTemp = `${classNameTemp} tag-br--parent-h1`;
                 break;
 
-            case 'left-right':
-                classNameTemp = `${classNameTemp} tag-br--left-right`;
+            case 'h3':
+                classNameTemp = `${classNameTemp} tag-br--parent-h3`;
                 break;
         }
 
         return classNameTemp;
     }
 
-    return <span className={getClassName(position)}>
+    return <div className={getClassName(parent)}>
         {props.children}
-    </span>
+    </div>
 }
 
 export default BrTag

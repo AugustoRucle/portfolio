@@ -1,49 +1,50 @@
 @use "../../../styles/colors"
 @use "../../../styles/font"
+@use "../../../styles/mixins"
 
-@mixin tag-br($position: 'top-bottom', $close: false)
-    font-family: font.$font-family-tag
+@mixin tag-br($parent, $close: false)
+    @include mixins.tag
+
     color: colors.$deep-purple-A100-60p
-    font-size: 20px
     position: absolute
     font-weight: 300
-    line-height: 0px
 
-    @if ($position == 'top-bottom')
+    @if ($parent == 'h1')
         @if $close == false
             content: '<br>'
-            top: 36px
+            left: 0px
+            top: -5px
         @else
             content: '<br/>'
-            bottom: -66px
-    @else
-        top: 50%
+            left: 0px
+            bottom: -8px
 
+    @else if ($parent == 'h3')
         @if $close == false
-            transform: translate(-52px,-50%)
             content: '<br>'
+            left: 0px
+            top: 5px
         @else
-            transform: translate(16px,-50%)
             content: '<br/>'
-
+            left: 0px
+            bottom: -1px
 .tag-br
-    position: relative
+    @include mixins.tag-text
     color: font.$font-color-br-text
     font-weight: 700
     font-size: inherit
 
-    &.tag-br--top-bottom
+    &.tag-br--parent-h1
         &:before
-            @include tag-br("top-bottom", false)
+            @include tag-br('h1', false)
 
         &:after
-            @include tag-br("top-bottom", true)
-    &.tag-br--left-right
-        margin-left: 60px
-        margin-right: 60px
+            @include tag-br('h1', true)
 
+    &.tag-br--parent-h3
         &:before
-            @include tag-br("left-right", false)
+            @include tag-br('h3', false)
 
         &:after
-            @include tag-br("left-right", true)
+            @include tag-br('h3', true)
+

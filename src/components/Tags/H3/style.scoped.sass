@@ -2,26 +2,49 @@
 @use "../../../styles/colors"
 @use "../../../styles/font"
 
-@mixin tag-h3($close: false)
+@mixin tag-h3($position: 'top-bottom', $close: false)
     @include mixins.tag
-    font-size: 20px
     font-weight: 300
 
-    @if $close == false
-        content: '<h3>'
-        top: -8px
-    @else
-        content: '<h3/>'
-        bottom: -8px
+    @if ($position == 'top-bottom')
+        @if $close == false
+            content: '<h3>'
+            left: 0
+            top: 2px
+        @else
+            content: '<h3/>'
+            left: 0
+            bottom: -2px
 
+    @else
+        top: 50%
+
+        @if $close == false
+            content: '<h3>'
+            transform: translateY(-50%)
+            left: 0px
+        @else
+            content: '<h3/>'
+            transform: translateY(-50%)
+            right: 0px
 .tag-h3
     @include mixins.tag-text
 
-    font-weight: 400
+    font-weight: bold
     font-size: 30px
 
-    &:before
-        @include tag-h3(false)
+    &.tag-h3--top-bottom
+        &:before
+            @include tag-h3("top-bottom", false)
 
-    &:after
-        @include tag-h3(true)
+        &:after
+            @include tag-h3("top-bottom", true)
+    &.tag-h3--left-right
+        padding-left: 60px
+        padding-right: 60px
+
+        &:before
+            @include tag-h3("left-right", false)
+
+        &:after
+            @include tag-h3("left-right", true)

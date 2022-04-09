@@ -4,22 +4,23 @@
 
 @mixin tag-p($close: false)
     @include mixins.tag
-    font-size: 20px
     font-weight: 300
 
     @if $close == false
         content: '<p>'
-        top: -20px
+        left: 0px
+        top: -13px
     @else
         content: '<p/>'
-        bottom: -20px
+        left: 0px
+        bottom: -16px
 
 .tag-p
     @include mixins.tag-text
 
     font-weight: 400
-    font-size: 20px
-    line-height: 2.5rem
+    font-size: 16px
+    line-height: 2rem
 
     &:before
         @include tag-p(false)

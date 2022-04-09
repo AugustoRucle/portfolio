@@ -1,14 +1,22 @@
 import React from 'react';
 
+import { getPositionClassName } from '../functions';
+
 import './style.scoped.sass';
 
 function H3Tag(props) {
-    return <h3
-        className={`tag-h3 ${props.className}`}
-        style={props.style}
+    const {
+        position,
+        children,
+        style,
+    } = props;
+
+    return <div
+        className={`${getPositionClassName(position, 'h3')}`}
+        style={style}
     >
-        {props.children}
-    </h3>
+        {children}
+    </div>
 }
 
 export default H3Tag

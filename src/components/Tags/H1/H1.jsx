@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { getPositionClassName } from '../functions';
+
 import './style.scoped.sass';
 
 function H1Tag(props) {
     return <h1
-        className={`tag-h1 ${props.className}`}
+        className={getPositionClassName(props.position, 'h1')}
         style={props.style}
     >
         {props.children}

@@ -2,17 +2,30 @@
 @use "../../../styles/colors"
 @use "../../../styles/font"
 
-@mixin tag-h1($close: false)
+@mixin tag-h1($position: 'top-bottom', $close: false)
     @include mixins.tag
-    font-size: 20px
     font-weight: 300
 
-    @if $close == false
-        content: '<h1>'
-        top: -14px
+    @if ($position == 'top-bottom')
+        @if $close == false
+            content: '<h1>'
+            left: 0px
+            top: -5px
+        @else
+            content: '<h1/>'
+            bottom: -6px
+            left: 0px
     @else
-        content: '<h1/>'
-        bottom: -14px
+        top: 50%
+
+        @if $close == false
+            content: '<h1>'
+            transform: translateY(-50%)
+            left: 0px
+        @else
+            content: '<h1/>'
+            transform: translateY(-50%)
+            right: 0px
 
 .tag-h1
     @include mixins.tag-text
@@ -20,8 +33,18 @@
     font-weight: 700
     font-size: 46px
 
-    &:before
-        @include tag-h1(false)
+    &.tag-h1--top-bottom
+        &:before
+            @include tag-h1("top-bottom", false)
 
-    &:after
-        @include tag-h1(true)
+        &:after
+            @include tag-h1("top-bottom", true)
+    &.tag-h1--left-right
+        padding-left: 60px
+        padding-right: 60px
+
+        &:before
+            @include tag-h1("left-right", false)
+
+        &:after
+            @include tag-h1("left-right", true)
