@@ -1,0 +1,28 @@
+@use "../../styles/colors"
+
+.list
+    display: flex
+    flex-direction: row
+
+    .list-content
+        list-style: none
+        margin-bottom: 0px
+
+        &.list-content--space
+            margin-right: 25px
+
+        .list-item
+            position: relative
+            color: colors.$white
+
+            &:before
+                content: ''
+                position: absolute
+                border-right: 0.24rem solid colors.$light-blue-A700
+                border-bottom: 0.24rem solid colors.$light-blue-A700
+                border-radius: 12%
+                width: 10px
+                height: 10px
+                top: 50%
+                left: -20px
+                transform: translateY(-50%) rotate(-45deg)
