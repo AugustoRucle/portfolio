@@ -23,7 +23,7 @@ function Router() {
     const location = useLocation();
 
     return <AnimatePresence>
-        <App loadingPage={true}>
+        <App>
             <Routes
                 location={location}
                 key={location.pathname}
