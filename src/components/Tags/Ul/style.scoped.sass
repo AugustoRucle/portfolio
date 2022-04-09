@@ -1,0 +1,51 @@
+@use "../../../styles/mixins"
+@use "../../../styles/colors"
+@use "../../../styles/font"
+
+@mixin tag-ul($position: 'top-bottom', $close: false)
+    @include mixins.tag
+    font-weight: 300
+
+    @if ($position == 'top-bottom')
+        @if $close == false
+            content: '<ul>'
+            left: 0px
+            top: -10px
+        @else
+            content: '<ul/>'
+            left: 0px
+            bottom: -14px
+    @else
+        top: 50%
+
+        @if $close == false
+            content: '<ul>'
+            transform: translateY(-50%)
+            left: 0px
+        @else
+            content: '<ul/>'
+            transform: translateY(-50%)
+            right: 0px
+
+.tag-ul
+    @include mixins.tag-text
+
+    font-weight: normal
+    font-size: 16px
+    line-height: 2.2rem
+
+    &.tag-ul--top-bottom
+        &:before
+            @include tag-ul("top-bottom", false)
+
+        &:after
+            @include tag-ul("top-bottom", true)
+    &.tag-ul--left-right
+        padding-left: 60px
+        padding-right: 60px
+
+        &:before
+            @include tag-ul("left-right", false)
+
+        &:after
+            @include tag-ul("left-right", true)
