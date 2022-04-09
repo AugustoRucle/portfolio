@@ -16,7 +16,7 @@ const Icons = {
 
 function Social(props) {
     return <Tooltip
-        overlayClassName="social-tooltip"
+        overlayClassName="custom-tooltip"
         placement={props.placement}
         title={props.title}
     >
