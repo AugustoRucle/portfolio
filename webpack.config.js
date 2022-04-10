@@ -8,6 +8,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, './dist'),
+        publicPath: '/',
     },
 
     resolve: {
@@ -80,6 +81,7 @@ module.exports = {
         static: {
             directory: path.resolve(__dirname, './dist'),
         },
+        historyApiFallback: true,
         compress: true,
         port: 3006
     },
