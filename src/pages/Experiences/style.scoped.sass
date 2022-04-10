@@ -1,0 +1,40 @@
+@use "../../styles/colors"
+
+.experiences
+    width: 100%
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-top: 20px
+    height: 60vh
+
+    .experience
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 300px
+
+        .experience-company
+            height: 150px
+
+            & > img
+                object-fit: contain
+                height: 100%
+                width: 100%
+
+        .experience-link
+            display: flex
+            align-items: center
+            color: colors.$light-blue-A700
+            font-size: 16px
+
+            .experience-link__icon
+                margin-right: 10px
+                font-size: 20px
+
+        &:nth-child(1)
+            justify-content: start
+
+        &:nth-child(3)
+            justify-content: end
