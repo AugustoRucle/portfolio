@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ExperiencePage from './pages/Experience';
+import ExperiencesPage from './pages/Experiences';
 import FestivalsPage from './pages/Festivals';
 import PortfolioPage from './pages/Portfolio';
 import AboutMePage from './pages/AboutMe';
@@ -29,7 +29,7 @@ function Router() {
                 key={location.pathname}
             >
                 <Route index element={<HomePage />} />
-                <Route path="/experience" element={<ExperiencePage />} />
+                <Route path="/experience" element={<ExperiencesPage />} />
                 <Route path="/festivals" element={<FestivalsPage />} />
                 <Route path="/portfolio" element={<PortfolioPage />} />
                 <Route path="/about-me" element={<AboutMePage />} />
