@@ -73,10 +73,34 @@ const getRandomArbitrary = (min, max) => {
     return Math.abs(Math.ceil(Math.random() * (max - min) + min));
 }
 
+
+
+/**
+ * Check if value is object.
+ * 
+ * @param {*} value
+ * @return {boolean}
+ */
+const isObject = (value) => {
+    return value && typeof value === 'object';
+}
+
+/**
+ * Check if object is empty.
+ * 
+ * @param {*} value
+ * @return {boolean}
+ */
+const isEmptyObject = (value) => {
+    return !isObject(value) || Object.keys(value).length === 0;
+}
+
 export {
     generateComponentKey,
     getRandomArbitrary,
     generateRandomId,
     sliceIntoChunks,
+    isEmptyObject,
     isFunction,
+    isObject,
 }
