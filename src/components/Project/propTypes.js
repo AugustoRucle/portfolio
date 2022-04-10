@@ -6,11 +6,11 @@ const propTypes = {
     place: PropTypes.string,
     company: PropTypes.shape({
         to: PropTypes.string,
-        text: PropTypes.number
+        text: PropTypes.string
     }),
     website: PropTypes.shape({
         to: PropTypes.string,
-        text: PropTypes.number
+        text: PropTypes.string
     }),
     languages: PropTypes.arrayOf(PropTypes.string),
     image: PropTypes.shape({

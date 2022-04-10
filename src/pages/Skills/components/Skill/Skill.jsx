@@ -1,7 +1,11 @@
 import React from 'react';
 import { Progress } from 'antd';
 
+import { generateComponentKey } from '../../../../utils/ functions';
+
 import './style.scoped.sass';
+
+const COMPONENT_KEY = generateComponentKey();
 
 function Skill(props) {
     const {
@@ -22,8 +26,11 @@ function Skill(props) {
             </h6>
 
             <div className="skill-types">
-                {skillsTypes.map((type) => (
-                    <span className="skill-types__item">
+                {skillsTypes.map((type, indice) => (
+                    <span
+                        className="skill-types__item"
+                        key={`${COMPONENT_KEY}_${indice}`}
+                    >
                         {type}
                     </span>
                 ))}

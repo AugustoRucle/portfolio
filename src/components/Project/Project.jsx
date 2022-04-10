@@ -7,9 +7,14 @@ import {
     faGlobe
 } from '@fortawesome/free-solid-svg-icons';
 
-import { isEmptyObject } from '../../utils/ functions';
+import {
+    generateComponentKey,
+    isEmptyObject
+} from '../../utils/ functions';
 
 import './style.scoped.sass'
+
+const COMPONENT_KEY = generateComponentKey();
 
 function Project(props) {
     const {
@@ -92,8 +97,11 @@ function Project(props) {
                 </p>
 
                 <div className="project-languages">
-                    {languages.map((language) => (
-                        <span className="project-languages__text">
+                    {languages.map((language, indice) => (
+                        <span
+                            className="project-languages__text"
+                            key={`${COMPONENT_KEY}_language_${indice}`}    
+                        >
                             {language}
                         </span>
                     ))}
