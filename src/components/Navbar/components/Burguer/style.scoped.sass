@@ -1,0 +1,54 @@
+@use "../../../../styles/colors"
+
+.navbar-burguer
+    width: 2rem
+    height: 2rem
+
+    position: fixed
+    top: 28px
+    right: 20px
+    z-index: 1000
+
+    display: none
+    justify-content: space-around
+    flex-flow: column nowrap
+
+    cursor: pointer
+
+    .navbar-burguer--item
+        width: 2rem
+        height: 0.25rem
+        background-color: colors.$white
+        border-radius: 10px
+
+        transform-origin: 1px
+        transition: all 0.3s linear
+
+        &:nth-child(1)
+            transform: rotate(0)
+
+        &:nth-child(2)
+            transform: translateX(0)
+            opacity: 1
+
+        &:nth-child(3)
+            transform: rotate(0)
+
+    &.navbar-burguer--open
+
+        .navbar-burguer--item
+            background-color: colors.$gray-200
+
+            &:nth-child(1)
+                transform: rotate(45deg)
+
+            &:nth-child(2)
+                transform: translateX(100%)
+                opacity: 0
+
+            &:nth-child(3)
+                transform: rotate(-45deg)
+
+@media only screen and (max-width: 1480px)
+    .navbar-burguer
+        display: flex
