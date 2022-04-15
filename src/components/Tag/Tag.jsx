@@ -15,7 +15,7 @@ function Tag(props) {
 
     return <span
         className={`custom-tag ${checked && 'custom-tag--checked'} ${className}`}
-        style={{ width }}
+        style={{ width: typeof width === 'number' ? `${width}px` : width }}
         onClick={onClick}
     >
         {children}

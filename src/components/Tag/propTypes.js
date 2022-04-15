@@ -4,13 +4,16 @@ const propTypes = {
     className: PropTypes.string,
     checked: PropTypes.bool,
     onClick: PropTypes.func,
-    width: PropTypes.number,
+    width: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
 const defaultProps = {
     className: '',
     checked: false,
-    onClick: () => {},
+    onClick: () => { },
     width: 100,
 };
 
