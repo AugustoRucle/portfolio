@@ -29,11 +29,11 @@ function Router() {
                 key={location.pathname}
             >
                 <Route index element={<HomePage />} />
-                <Route path="/experience" element={<ExperiencesPage />} />
-                <Route path="/festivals" element={<FestivalsPage />} />
-                <Route path="/portfolio" element={<PortfolioPage />} />
-                <Route path="/about-me" element={<AboutMePage />} />
-                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/experiencia" element={<ExperiencesPage />} />
+                <Route path="/eventos" element={<FestivalsPage />} />
+                <Route path="/portafolio" element={<PortfolioPage />} />
+                <Route path="/sobre-mi" element={<AboutMePage />} />
+                <Route path="/contacto" element={<ContactPage />} />
                 <Route path="/skills" element={<SkillsPage />} />
             </Routes>
         </App>
