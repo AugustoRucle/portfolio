@@ -18,6 +18,12 @@
         content: '<body/>'
         bottom: 20px
 
+    @media only screen and (max-width: 800px)
+        font-size: 60px
+
+        @if $close == true
+            bottom: 5px
+
 .customer-container
     position: relative
     padding-top: 123px
@@ -37,3 +43,11 @@
 
     .customer-container
         height: auto
+        width: 100%
+
+@media only screen and (max-width: 800px)
+    .customer-container
+        padding-top: 90px
+        padding-bottom: 100px
+        padding-left: 20px
+        padding-right: 20px

@@ -30,6 +30,8 @@ const pageTransition = {
 
 function PageTransition(props) {
     return <motion.div
+        className="page-transition"
+        style={ props.style || {} }
         initial="initial"
         animate="in"
         exit="out"

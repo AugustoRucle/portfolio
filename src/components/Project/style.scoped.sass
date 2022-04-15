@@ -33,15 +33,14 @@
                 position: absolute
                 z-index: 1
                 opacity: 1
-                scale: 1,
-                content: '',
+                content: ''
                 left: -2px
                 top: -2px
                 bottom: -2px
                 right: -2px
                 border-radius: 5px
                 background-color: colors.$light-blue-A700-40p
-                transition: all 250ms
+                transition: all 0.5s ease-out
 
         .project-company, .project-website
             display: flex
@@ -120,7 +119,6 @@
 
                 &:before
                     opacity: 0
-                    scale: 0.98
                     background-color: transparent
 
     &.project-left
@@ -165,3 +163,49 @@
             .project-time
                 margin-left: 0px
                 margin-right: 30px
+
+@media only screen and (max-width: 1500px)
+    .project
+        .project-content
+            width: 100%
+
+@media only screen and (max-width: 1000px)
+    .project
+
+        .project-content
+            padding: 10px 40px
+            height: 400px
+
+            .project-image
+                width: 100%
+                .project-image--img
+                    -webkit-filter: blur(6px)
+                    filter: blur(6px)
+
+                &:before
+                    background-color: rgb(33, 33, 33, 0.70)
+
+            &:hover
+                .project-image
+                    .project-image--img
+                        -webkit-filter: blur(6px)
+                        filter: blur(6px)
+
+                    &:before
+                        opacity: 1
+                        background-color: rgb(33, 33, 33, 0.70)
+
+        &.project-left
+            justify-content: start
+
+            .project-content
+                justify-content: start
+
+                .project-meta-data
+                    align-items: start
+
+                    .project-meta-data__title, .project-company, .project-website, .project-place, .project-meta-data__description
+                        text-align: left
+
+                    .project-lenguages
+                        align-content: start

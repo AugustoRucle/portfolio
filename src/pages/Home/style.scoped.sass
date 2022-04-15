@@ -14,16 +14,24 @@
         flex: 1
         order: 1
 
+        .left-content--job-desktop, .left-content--job-mobile
+            width: 100%
+
+        .left-content--job-mobile
+            display: none
+
         .about-me
             position: relative
+            width: 280px
             height: 70px
 
             .about-me--animation
                 position: absolute
+                width: 100%
                 left: 0px
                 bottom: -5px
                 opacity: 0
-                animation: bottomFadeOut 3s linear 0.5s normal forwards
+                animation: bottomFadeOut 3s linear 0.4s normal forwards
 
     .right-content
         display: flex
@@ -42,7 +50,7 @@
                 bottom: 0px
                 right: -3rem
                 opacity: 0
-                animation: rightFadeInOut 3s linear 0.5s normal forwards
+                animation: rightFadeInOut 3s linear 0.4s normal forwards
 
             .avatar--img
                 height: 510px
@@ -63,7 +71,7 @@
                 right: 0px
                 bottom: -5px
                 opacity: 0
-                animation: bottomFadeOut 3s linear 0.5s normal forwards
+                animation: bottomFadeOut 3s linear 0.4s normal forwards
 
 @keyframes bottomFadeOut
     0%
@@ -94,6 +102,14 @@
         right: 1.3rem
 
 @media only screen and (max-width: 1480px)
+    .home-page .left-content
+        .left-content--job-desktop
+            display: none
+
+        .left-content--job-mobile
+            display: block
+
+@media only screen and (max-width: 1080px)
     .home-page
         display: flex
         flex-direction: column
@@ -101,12 +117,10 @@
         .left-content
             align-items: start
             margin-right: 0px
-            order: 2
-            width: 680px
+            width: 100%
 
         .right-content
             margin-right: 0px
-            order: 1
             margin-top: 40px
             margin-bottom: 80px
 
@@ -118,4 +132,38 @@
 
         .left-content
             align-items: start
-            width: auto
+            width: 100%
+
+            .left-content--job-desktop
+                display: none
+
+            .left-content--job-mobile
+                display: block
+
+        .right-content
+            width: 100%
+
+            .avatar
+                height: 300px
+                width: 100%
+
+                .avatar--animation
+                    position: absolute
+                    top: 0px
+                    bottom: 0px
+                    right: -3rem
+
+                    opacity: 0
+
+                    display: flex
+                    justify-content: center
+
+                    width: 100%
+
+                    padding-left: 20px
+
+                    animation: rightFadeInOut 3s linear 0.4s normal forwards
+
+                .avatar--img
+                    height: 300px
+                    width: 260px

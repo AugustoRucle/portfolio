@@ -26,11 +26,13 @@
         padding: 10px 20px
 
         opacity: 0
-        transition: .5s ease
+
 
         background-color: colors.$light-blue-A700-60p
         -webkit-backdrop-filter: blur(10px)
         backdrop-filter: blur(10px)
+
+        transition: all 0.4s ease-in
 
         &:hover, &.event-image-content--show
             opacity: 1
@@ -48,3 +50,17 @@
             color: colors.$white
             font-size: 14px
             text-align: justify
+
+@media only screen and (max-width: 800px)
+    .event-image
+        position: relative
+        width: 100%
+        height: 300px
+
+        .event-image-content
+            display: flex
+            align-items: center
+            justify-content: center
+
+            .event-image-content__title, .event-image-content__description
+                text-align: center
