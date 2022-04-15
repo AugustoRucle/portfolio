@@ -16,30 +16,17 @@ function ItemContainer(props) {
 
     const className = `navbar-item ${current && 'navbar-item--current'}`;
 
-    /**
-     * On change
-     * 
-     * @param {object} event 
-     * @returns {functio}
-     */
-    const _onClick = (event) => {
-        if (!isFunction(onClick)) {
-            return;
-        }
-
-        return onClick(event);
-    }
-
     return to
         ? <Link
             className={className}
+            onClick={onClick}
             to={to}
         >
             {children}
         </Link>
         : <div
             className={className}
-            onClick={_onClick}
+            onClick={onClick}
         >
             {children}
         </div>

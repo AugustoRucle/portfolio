@@ -2,16 +2,13 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
     current: PropTypes.bool,
-    onClick: PropTypes.oneOfType([
-        PropTypes.null,
-        PropTypes.func
-    ]),
+    onClick: PropTypes.func,
     to: PropTypes.string,
 };
 
 const defaultProps = {
     current: false,
-    onClick: null,
+    onClick: () => { },
     to: null,
 };
 

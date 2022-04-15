@@ -10,11 +10,11 @@ $text-size: 0.72rem
 .navbar
     padding: 5px 0px
     display: flex
-    justify-content: space-around
     background-color: colors.$gray-900
     height: 100vh
     width: 138px
-    z-index: 1000
+
+    z-index: 300
 
     .navbar-content
         background-color: colors.$light-blue-A700-25p
@@ -75,4 +75,22 @@ $text-size: 0.72rem
 
 @media only screen and (max-width: 1480px)
     .navbar
-        display: none
+        position: absolute
+        background-color: transparent
+        right: 0px
+        width: 300px
+        padding-top: 0px
+        padding-bottom: 0px
+
+        transform: translateX(100%)
+
+        transition: all 0.2s ease-in-out
+
+        &.navbar--open
+            transform: translateX(0)
+            background-color: colors.$gray-900
+
+        .navbar-content
+            justify-content: start
+            height: 100%
+            padding-top: 68px
