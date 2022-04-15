@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Typewriter from '../Typewriter';
+import RandomLetters from '../RandomLetters';
 import { Progress } from 'antd';
 
 import { isFunction } from '../../utils/ functions';
@@ -36,7 +36,7 @@ function Loading(props) {
     }, []);
 
     useEffect(() => {
-        if (percent >= 100) {
+        if (isCompletedLoading()) {
             if (isFunction(onFinish)) {
                 setTimeout(() => {
                     onFinish()
@@ -45,17 +45,30 @@ function Loading(props) {
         }
     }, [percent]);
 
+    /**
+     * Check if loading have been complete
+     * 
+     * @return {bool}
+     */
+    const isCompletedLoading = () => {
+        return percent >= 100;
+    }
+
     return <div className="loading-page">
         <div>
             <div className="d-flex justify-content-center">
-                <Typewriter>
-                    <h1 className="loading-page__text">
-                        Loading...
-                    </h1>
-                </Typewriter>
+                <div className="loading-page__text">
+                    <RandomLetters
+                        durationAnimation={100}
+                        durationByLetter={200}
+                        amountRandomLetter={50}
+                        color={isCompletedLoading() ? 'success-2' : 'white'}
+                        text="Cargando..."
+                    />
+                </div>
             </div>
 
-            <div style={{ width: 500 }}>
+            <div className="loading-page__progress">
                 <Progress percent={percent} />
             </div>
         </div>
