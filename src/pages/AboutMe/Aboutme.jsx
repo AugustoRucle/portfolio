@@ -15,12 +15,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 
-import TravelImage from '../../assets/images/Travel.jpg';
-import StudyOnline from '../../assets/images/Study_Online.jpg';
-import CursoArduino from '../../assets/images/Curso_Arduino.jpg';
-import Coffee from '../../assets/images/Coffee.jpg';
-import Anime from '../../assets/images/Anime.jpg';
-import Juegos from '../../assets/images/Juegos.jpg';
+import TravelImage from '../../assets/images/travel.webp';
+import StudyOnline from '../../assets/images/study_online.webp';
+import CursoArduino from '../../assets/images/curso_arduino.webp';
+import Coffee from '../../assets/images/coffee.webp';
+import Anime from '../../assets/images/anime.webp';
+import Juegos from '../../assets/images/juegos.webp';
 
 import { getRandomArbitrary } from '../../utils/ functions';
 

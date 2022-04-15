@@ -3,12 +3,12 @@ import React from 'react';
 import PageTransition from '../../components/PageTransition';
 import Project from '../../components/Project';
 
-import ShedclouddImg from '../../assets/images/Shedcloud.png';
-import FacturaTuTicketImg from '../../assets/images/FacturaTuTicket.png';
-import XmlToPdfImg from '../../assets/images/XmlToPdf.png';
-import PresadoImg from '../../assets/images/Presado.png';
-import Nom035Img from '../../assets/images/Nom035.png';
-import PosImg from '../../assets/images/Pos.png';
+import ShedclouddImg from '../../assets/images/shedcloud.webp';
+import FacturaTuTicketImg from '../../assets/images/factura_tu_ticket.webp';
+import XmlPdfImg from '../../assets/images/xmlpdf.webp';
+import PresadoImg from '../../assets/images/presado.webp';
+import Nom035Img from '../../assets/images/nom035.webp';
+import PosImg from '../../assets/images/pos.webp';
 
 import './style.scoped.sass';
 
@@ -143,7 +143,7 @@ function PortfolioPage(props) {
                     "Ant Design"
                 ]}
                 image={{
-                    src: XmlToPdfImg,
+                    src: XmlPdfImg,
                     alt: "Imagen de inicio de xml to pdf"
                 }}
                 position="left"

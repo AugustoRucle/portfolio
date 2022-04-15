@@ -7,14 +7,14 @@ import Tag from '../../components/Tag';
 
 import { generateComponentKey } from '../../utils/ functions';
 
-import Css3Image from '../../assets/images/css-3.png';
-import ReactImage from '../../assets/images/react.png';
-import VuejsImage from '../../assets/images/vuejs.png';
-import JsImage from '../../assets/images/Js.png';
-import PhpImage from '../../assets/images/php.png';
-import GitImage from '../../assets/images/git.png';
-import GolangImage from '../../assets/images/golang.png';
-import FigmaImage from '../../assets/images/figma.png';
+import Css3Image from '../../assets/images/css_3.webp';
+import ReactImage from '../../assets/images/react.webp';
+import VuejsImage from '../../assets/images/vuejs.webp';
+import JsImage from '../../assets/images/js.webp';
+import PhpImage from '../../assets/images/php.webp';
+import GitImage from '../../assets/images/git.webp';
+import GolangImage from '../../assets/images/golang.webp';
+import FigmaImage from '../../assets/images/figma.webp';
 
 import './style.scoped.sass'
 
@@ -64,24 +64,25 @@ function SkillsPage(props) {
     return <PageTransition>
         <H1Tag>
             Habilidades
-            <div className="d-flex flex-wrap">
+            <div className="skill-tags">
                 {SKILLS_TYPE.map((skill, indice) => (
-                    <Tag
-                        key={`${COMPONENT_KEY}_${indice}`}
-                        checked={isCheckedSkill(skill)}
-                        className="me-3"
-                        width={130}
-                        onClick={() => changeCheckSkill(skill)}
-                    >
-                        {skill}
-                    </Tag>
+                    <div className="skill-tag">
+                        <Tag
+                            key={`${COMPONENT_KEY}_${indice}`}
+                            checked={isCheckedSkill(skill)}
+                            width="100%"
+                            onClick={() => changeCheckSkill(skill)}
+                        >
+                            {skill}
+                        </Tag>
+                    </div>
                 ))}
             </div>
 
             <div style={{ height: 20 }} />
         </H1Tag>
 
-        <div className="d-flex flex-wrap mt-5">
+        <div className="skills">
             <div className="skill-item">
                 <Skill
                     title="Javascript"

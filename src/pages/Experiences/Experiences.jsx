@@ -4,9 +4,9 @@ import PageTransition from '../../components/PageTransition';
 import Experience from './components/Experience';
 import H1Tag from '../../components/Tags/H1';
 
-import CodigoFacilitoImage from '../../assets/images/CodigoFacilito.png'
-import SwitchImage from '../../assets/images/SwitchLogo.png'
-import RealhostImage from '../../assets/images/Realhost.png'
+import CodigoFacilitoImage from '../../assets/images/codigo_facilito.webp'
+import SwitchImage from '../../assets/images/switch_logo.webp'
+import RealhostImage from '../../assets/images/realhost.webp'
 
 import './style.scoped.sass'
 

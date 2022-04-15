@@ -9,7 +9,7 @@ import Button from '../../components/Button';
 import Social from '../../components/Social';
 import { Link } from "react-router-dom";
 
-import Avatar from '../../assets/images/Logo.png';
+import Avatar from '../../assets/images/logo.webp';
 
 import './style.scoped.sass'
 
@@ -30,17 +30,37 @@ function HomePage() {
                 <div style={{ marginTop: 80 }} />
 
                 <H1Tag>
-                    <TypeWriter width={440} startAfter={300} hideAfter={2100}>
-                        Soy un
-                    </TypeWriter>
-
-                    <div style={{ height: 10 }} />
-
-                    <BrTag parent="h1">
-                        <TypeWriter width={730} startAfter={2300}>
-                            Desarrollador Frontend &nbsp;
+                    <div className="left-content--job-desktop">
+                        <TypeWriter width={410} startAfter={300} hideAfter={1000}>
+                            Soy un
                         </TypeWriter>
-                    </BrTag>
+
+                        <div style={{ height: 10 }} />
+
+                        <BrTag parent="h1">
+                            <TypeWriter width={730} startAfter={1300}>
+                                <span>Desarrollador Frontend &nbsp;</span>
+                            </TypeWriter>
+                        </BrTag>
+                    </div>
+
+                    <div className="left-content--job-mobile">
+                        <TypeWriter width={285} startAfter={300} hideAfter={1000}>
+                            Soy un
+                        </TypeWriter>
+
+                        <div style={{ height: 10 }} />
+
+                        <BrTag parent="h1">
+                            <TypeWriter width={300} startAfter={1400} hideAfter={2000}>
+                                <span>Desarrollador &nbsp;</span>
+                            </TypeWriter>
+
+                            <TypeWriter width={190} startAfter={3500}>
+                                <span>Frontend &nbsp;</span>
+                            </TypeWriter>
+                        </BrTag>
+                    </div>
 
                     <div style={{ height: 30 }} />
                 </H1Tag>
@@ -49,7 +69,7 @@ function HomePage() {
 
                 <div className="about-me">
                     <div className="about-me--animation">
-                        <Link to="about-me">
+                        <Link to="portafolio">
                             <Button
                                 label="Conoce mis trabajos"
                                 icon="faArrowRight"
